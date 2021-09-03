@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ThingSpace UI SDK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="//stuk.github.io/jszip-utils/dist/jszip-utils.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+<div class="page">
+	
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<a class="navbar-brand" href="#"></a>                    
+				</div>
+			</div>
+		</div>	
+	</header>
+	
+	<nav id="main-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h5>One-click self-contained development environment setup</h5>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container body-content" >
+		<div class="stepwizard">
+			<div class="stepwizard-row setup-panel">
+				<div class="stepwizard-step">
+					<a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+					<p>Step 1</p>
+				</div>
+				<div class="stepwizard-step">
+					<a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+					<p>Step 2</p>
+				</div>
+				<div class="stepwizard-step">
+					<a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+					<p>Step 3</p>
+				</div>
+                <!--<div class="stepwizard-step">
+					<a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+					<p>Step 4</p>
+				</div>-->
+			</div>
+		</div>
+		<form role="form" id="step-wizard">
+			<div class="row setup-content" id="step-1">
+				<div class="col-xs-12">
+				
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-cog"></span>
+							<strong>Please select your desired platform to build the app</strong>							
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<ul class="nav">
+									<li>
+										<label for="radios-1">
+											<input type="radio" name="platform" id="radios-1" value="web" checked="checked">
+											Web (Angular JS 1.5.x)
+										</label>
+									</li>
+									<li>
+										<label for="radios-2">
+											<input type="radio" name="platform" id="radios-2" value="mobile">
+											Mobile (React Native for iOS and Android)
+										</label>
+									</li>
+								</ul>
+							</div>
+							<button class="btn btn-primary nextBtn btn-sm pull-right" type="button" >Next <span class="glyphicon glyphicon-menu-right"></span></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row setup-content" id="step-2">
+				<div class="col-xs-12">
+				
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-cog"></span>
+							<strong>Please select the devices to be deployed</strong>							
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<ul class="nav">
+									<li>
+										<label for="checkboxes-3-1">
+											<input type="checkbox" name="devices" id="checkboxes-3-1" value="Light" checked="checked">
+											Lights
+										</label>
+									</li>
+									<li>
+										<label for="checkboxes-3-2">
+											<input type="checkbox" name="devices" id="checkboxes-3-2" value="Cameras" checked="checked">
+											Cameras
+										</label>
+									</li>
+									<li>
+										<label for="checkboxes-3-3">
+											<input type="checkbox" name="devices" id="checkboxes-3-3" value="Sensors" checked="checked">
+											Traffic Sensors
+										</label>
+									</li>
+                                    <li>
+										<label for="checkboxes-3-4">
+											<input type="checkbox" name="devices" id="checkboxes-3-4" value="Routes" checked="checked">
+											Congestion Sensors
+										</label>
+									</li>
+								</ul>
+							</div>
+							<button class="btn btn-default prevBtn btn-sm pull-left" type="button">
+								<span class="glyphicon glyphicon-menu-left"></span> Prev
+							</button>
+							<button class="btn btn-primary nextBtn btn-sm pull-right" type="button">
+								Next <span class="glyphicon glyphicon-menu-right"></span>
+							</button>							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row setup-content" id="step-3">
+				<div class="col-xs-12">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-cog"></span>
+							<strong>Please select the UI components to be integrated</strong>							
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<ul class="nav">
+                                    <li>
+                                        <div id="maps">
+                                        <b>Map Type </b><br>
+                                        <label class="checkbox-inline">
+                                        <input type="radio" name="maptype" id="radios-2-1" value="google" checked>
+                                                Google Maps</label>
+                                                <label class="checkbox-inline"> 
+                                            <input type="radio" name="maptype" id="radios-2-2" value="mapquest">
+                                                MapQuest</label>
+                                                <label class="checkbox-inline">
+                                            <input type="radio" name="maptype" id="radios-2-3" value="bing">
+                                                Bing Maps
+                                            </label>        
+                                        </div>
+                                        <br>
+                                    </li>
+									<li>
+										<label for="checkboxes-2-2">
+											<input type="checkbox" name="components" id="checkboxes-2-2" value="overview" checked="checked">
+											Overview
+										</label>
+									</li>
+									<li>
+										<label for="checkboxes-2-3">
+											<input type="checkbox" name="components" id="checkboxes-2-3" value="devices" checked="checked">
+											Devices List View
+										</label>
+									</li>
+                                    <li>
+										<label for="checkboxes-2-4">
+											<input type="checkbox" name="components" id="checkboxes-2-4" value="rules" checked="checked">
+											Rules
+										</label>
+									</li>
+                                    <li>
+										<label for="checkboxes-2-5">
+											<input type="checkbox" name="components" id="checkboxes-2-5" value="alerts" checked="checked">
+											Alerts
+										</label>
+									</li>
+								</ul>
+							</div>
+							<span>Please click on generate code to download the project code as a zip</span>
+							<button class="btn btn-default prevBtn btn-sm pull-left" type="button">
+								<span class="glyphicon glyphicon-menu-left"></span> Prev
+							</button>
+							<button data-toggle="collapse" data-target="#infoSuccess" class="btn btn-success nextBtn btn-sm pull-right" id="submit_btn" type="button">
+								Generate Code
+							</button>								
+						</div>
+					</div>
+					
+				</div>				
+			</div>
+		</form>
+	</div>
+</div>
+<hr />
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="logo"><img src="img/logo-footer.png" alt="Verizon"></div>
+            </div>
+
+            <div class="col-xs-6">
+				<span class="footer__social-media pull-right">
+				  <span class="footer__connect-text">Connect with us</span>
+				  <a href="https://www.facebook.com/VerizonEnterprise" target="_blank" class="footer__social-media--icon icon-fb-circle"></a>
+				  <a href="http://www.twitter.com/vzenterprise" target="_blank" class="footer__social-media--icon icon-twitter-circle"></a>
+				  <a href="http://www.linkedin.com/company/1094?trk=tyah" target="_blank" class="footer__social-media--icon icon-linked-in-circle"></a>
+				  <a href="http://www.youtube.com/user/verizonenterprise" target="_blank" class="footer__social-media--icon icon-youtube-circle"></a>
+				</span>
+			  </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

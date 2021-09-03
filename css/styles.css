@@ -1,0 +1,336 @@
+body{ 
+    color: #494949;
+    font-family: arial,sans-serif;
+    margin: 0;
+    padding: 0;
+	background-color:#e7ebee;
+}
+
+.logo {
+	width:auto;
+	}
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+.nextBtn, .prevBtn{
+    
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.setup-content {
+	
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  box-shadow:1px 1px 2px #aab0b5;
+}
+.navbar-brand {
+    width: 180px;
+    height: 41px;
+    padding: 0px 15px;
+    position: static;
+    margin-top: 5px;
+    background: transparent url("../img/header-logo-rebrand.png") no-repeat scroll 0% 0px/contain;
+}
+
+/* icons
+//-------------------------------------------------- */
+@font-face {
+  font-family: "icons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/icons.eot");
+  src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
+}
+[data-icon]:before {
+  content: attr(data-icon);
+}
+
+[data-icon]:before,
+.icon-account:before,
+.icon-add-new:before,
+.icon-alerts:before,
+.icon-analytics:before,
+.icon-angle-down:before,
+.icon-angle-left:before,
+.icon-angle-right:before,
+.icon-angle-right-bold:before,
+.icon-angle-right-thin:before,
+.icon-angle-up:before,
+.icon-api-docs:before,
+.icon-app-sample:before,
+.icon-arrow-left-round:before,
+.icon-arrow-link:before,
+.icon-arrow-right-round:before,
+.icon-assets:before,
+.icon-autoshare:before,
+.icon-bell:before,
+.icon-bug-labs:before,
+.icon-camera:before,
+.icon-card-view:before,
+.icon-check:before,
+input[type="checkbox"] + label:before,
+input[type="checkbox"]:checked + label:before,
+.icon-check-square-off:before,
+.icon-check-square-on:before,
+.icon-chevron-down:before,
+.icon-chevron-left:before,
+.icon-chevron-right:before,
+.icon-chevron-up:before,
+.icon-close:before,
+.icon-close-bold:before,
+.icon-cloud:before,
+.icon-cloud-storage:before,
+.icon-communication:before,
+.icon-community:before,
+.icon-dakota:before,
+.icon-dashboard:before,
+.icon-dashboards:before,
+.icon-develop:before,
+.icon-developer-kits:before,
+.icon-device:before,
+.icon-devices:before,
+.icon-documentation:before,
+.icon-download:before,
+.icon-edit:before,
+.icon-emag:before,
+.icon-envelope:before,
+.icon-error:before,
+.icon-fb:before,
+.icon-fb-circle:before,
+.icon-fb-silo:before,
+.icon-garage-door:before,
+.icon-gridwide:before,
+.icon-hom-logo:before,
+.icon-home:before,
+.icon-info-circle:before,
+.icon-jobs:before,
+.icon-key-management:before,
+.icon-keys:before,
+.icon-learn:before,
+.icon-light:before,
+.icon-linked-in:before,
+.icon-linked-in-circle:before,
+.icon-linked-in-silo:before,
+.icon-list-view:before,
+.icon-lock:before,
+.icon-lock-open:before,
+.icon-m2mmc:before,
+.icon-market:before,
+.icon-market-place-settings:before,
+.icon-mcs:before,
+.icon-messaging:before,
+.icon-messaging-alerts:before,
+.icon-messaging-alerts-api:before,
+.icon-minus:before,
+.icon-motion:before,
+.icon-motion-with-border:before,
+.icon-network-manage:before,
+.icon-network-management-api:before,
+.icon-pages:before,
+.icon-palette:before,
+.icon-pattern:before,
+.icon-pause-circle:before,
+.icon-plus:before,
+.icon-profile:before,
+.icon-providers:before,
+.icon-radio-off:before,
+.icon-radio-on:before,
+.icon-refresh:before,
+.icon-rooms:before,
+.icon-save:before,
+.icon-scenes:before,
+.icon-scenes-with-border:before,
+.icon-search:before,
+.icon-settings:before,
+.icon-settings-with-border:before,
+.icon-shield:before,
+.icon-shield-with-border:before,
+.icon-signup-activated:before,
+.icon-signup-expired:before,
+.icon-signup-msg:before,
+.icon-signup-notactivated:before,
+.icon-signup-register:before,
+.icon-thermostat:before,
+.icon-things:before,
+.icon-timeline:before,
+.icon-trash:before,
+.icon-triangle-down:before,
+.icon-triangle-up:before,
+.icon-twitter:before,
+.icon-twitter-circle:before,
+.icon-twitter-silo:before,
+.icon-user:before,
+.icon-user-profile:before,
+.icon-users:before,
+.icon-vaas:before,
+.icon-vzbigdata:before,
+.icon-vzcloud:before,
+.icon-warning:before,
+.icon-youtube:before,
+.icon-youtube-circle:before,
+.icon-youtube-silo:before {
+  display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+
+.icon-fb:before {
+  content: "\f131";
+}
+
+.icon-fb-circle:before {
+  content: "\f137";
+}
+
+.icon-twitter:before {
+  content: "\f14e";
+}
+
+.icon-twitter-circle:before {
+  content: "\f14f";
+}
+
+.icon-linked-in:before {
+  content: "\f135";
+}
+
+.icon-linked-in-circle:before {
+  content: "\f14c";
+}
+
+.icon-youtube:before {
+  content: "\f150";
+}
+
+.icon-youtube-circle:before {
+  content: "\f151";
+}
+
+hr {
+	border-top-color: #ccc;
+}
+
+
+.header {
+	background-color: #fff;
+    border-top: 4px solid #ef1d1d;
+}
+
+.header a.navbar-brand {
+	color: #fff;
+	padding-left: 0;
+}
+
+
+.footer__social-media--icon {
+  color: #CCCCCC;
+  line-height: 1;
+}
+.footer__social-media--icon:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+@media screen and (min-width: 280px) {
+	.footer__social-media--icon {
+		margin: 0px 10px 0 0;
+		font-size: 35px;
+	}
+}
+
+@media (min-width: 768px) {
+	.footer__social-media--icon {
+		margin: 0px 0 0 5px;
+		font-size: 30px;
+	  }
+}
+
+@media (min-width: 900px) {
+	.footer__social-media--icon {
+		font-size: 35px;
+	  }
+}
+
+.body-content {
+	margin-top: 5%;
+}
+
+#step-wizard .panel-body {
+	min-height: 290px;
+	position: relative;
+}
+
+#step-wizard .panel-body .btn-primary, #step-wizard .panel-body .btn-success {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}
+
+#step-wizard .panel-body .btn-default {
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+#main-nav {
+    background-color: #fff;
+	border-bottom:1px solid #c4c9ce;
+	box-shadow:0px 1px 1px #c4c9ce;
+	}
+	
+#main-nav h5 {
+	color: ##586765;
+}
